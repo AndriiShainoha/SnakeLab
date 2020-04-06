@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Entities\Apple.cs" />
     <Compile Include="Entities\GameEntity.cs" />
+    <Compile Include="Entities\OnlyApple.cs" />
     <Compile Include="Entities\Snake.cs" />
     <Compile Include="Entities\SnakeElement.cs" />
     <Compile Include="GameWorld.cs" />

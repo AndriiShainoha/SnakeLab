@@ -43,6 +43,7 @@ namespace SnakeLab
             InitializeSnake();
             InitializeTimer(difficulty);
             IsRunning = true;
+            IsRunning = true;
         }
 
         private void InitializeTimer(int difficulty)
@@ -66,6 +67,14 @@ namespace SnakeLab
             Snake.MoveSnake();
             CheckCollision();
             CreateApple();
+            Draw();
+        }
+
+        private void MainGameOnlyLoop(object sender, EventArgs e)
+        {
+            Snake.MoveSnake();
+            CheckCollision();
+            CreateOnlyApple();
             Draw();
         }
 
@@ -104,6 +113,15 @@ namespace SnakeLab
             Canvas.SetLeft(Apple.UIElement, Apple.X + 2);
             Canvas.SetTop(Apple.UIElement, Apple.Y + 2);
         }
+
+        private void DrawOnlyApple()
+        {
+            if (!mainWindow.GameWorld.Children.Contains(OnlyApple))
+                mainWindow.GameWorld.Children.Add(OnlyApple.UIElement);
+            Canvas.SetLeft(Apple.UIElement, Apple.X + 2);
+            Canvas.SetTop(Apple.UIElement, Apple.Y + 2);
+        }
+
         private Line GenerateVerticalWorldLine(int j)
         {
             return new Line
@@ -166,6 +184,12 @@ namespace SnakeLab
                 Y = _randoTron.Next(0, RowCount) * ElementSize
             };
         }
+
+        private void CreateOnlyApple()
+        {
+            OnlyApple onlyApple = OnlyApple.getOnlyAppleInstance(ElementSize);
+        }
+
         private bool CollisionWithWorldBounds()
         {
             if (Snake == null || Snake.Head == null)
