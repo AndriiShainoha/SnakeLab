@@ -24,7 +24,13 @@ namespace SnakeLab
         public MainWindow()
         {
             InitializeComponent();
+            if (demoCheckBox.IsChecked == true) 
+            {
+                //x: Name = "LevelLbl
+                //LevelLbl.Visibility = 
+            }
         }
+
         private GameWorld _gameWorld;
         int apples, score, level;
 

@@ -27,8 +27,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <!--<CheckBox x:Name="demoCheckBox" Grid.Row="0"  IsThreeState="True" IsChecked="False" Margin="5" Height="20" Content="DemoGame" />-->
-            <Button Width="100" Grid.Row="0" Margin="5" Content="DemoStart" x:Name="DemoBtn" Click="DemoClick"/>
+            <CheckBox x:Name="demoCheckBox" Grid.Row="0"  IsThreeState="True" IsChecked="False" Margin="5" Height="20" Content="DemoGame" />
             <Button Width="100" Grid.Row="1" Margin="5" Content="Start" x:Name="StartBtn" Click="StartClick"/>
             <Button Width="100" Grid.Row="2" Margin="5" Content="Restart" x:Name="RestartBtn" Click="RestartClick"/>
             <Button Width="100" Grid.Row="3" Margin="5" Content="Options" Click="OptionsClick"/>
@@ -59,6 +58,8 @@
                     <Slider Grid.Row="2" Grid.Column="1" Minimum="1" Maximum="10" Value="1" Margin="10" x:Name="DifficultySlider" ></Slider>
                     <Label Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
                     <Slider Grid.Row="3" Grid.Column="1" Minimum="10" Maximum="40" Value="1" Margin="10" x:Name="ElementSizeSlider" ></Slider>
+                    <Label Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">SnakeColor</Label>
+                    
                 </Grid>
             </md:DialogHost.DialogContent>
             <md:Card Padding="32" Margin="16">

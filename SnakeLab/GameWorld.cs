@@ -23,6 +23,7 @@ namespace SnakeLab
 
         public Apple Apple { get; set; }
         public Snake Snake { get; set; }
+
         DispatcherTimer _gameLoopTimer;
         public bool IsRunning { get; set; }
         public GameWorld(MainWindow mainWindow)
@@ -81,7 +82,14 @@ namespace SnakeLab
         private void Draw()
         {
             DrawSnake();
-            DrawApple();
+            if (mainWindow.demoCheckBox.IsChecked == true)
+            {
+                DrawOnlyApple();
+            }
+            else
+            {
+                DrawApple();
+            }
         }
 
         private void DrawGameWorld()
@@ -116,8 +124,8 @@ namespace SnakeLab
 
         private void DrawOnlyApple()
         {
-            if (!mainWindow.GameWorld.Children.Contains(OnlyApple))
-                mainWindow.GameWorld.Children.Add(OnlyApple.UIElement);
+            if (!mainWindow.GameWorld.Children.Contains(OnlyApple.getOnlyAppleInstance(ElementSize).UIElement))
+                mainWindow.GameWorld.Children.Add(OnlyApple.getOnlyAppleInstance(ElementSize).UIElement);
             Canvas.SetLeft(Apple.UIElement, Apple.X + 2);
             Canvas.SetTop(Apple.UIElement, Apple.Y + 2);
         }

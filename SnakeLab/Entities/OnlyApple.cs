@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 using System.Windows.Shapes;
 
 namespace SnakeLab.Entities
 {
-    class OnlyApple : GameEntity
+    class OnlyApple
     {
+        public UIElement UIElement { get; set; }
+        public int X { get; set; }
+        public int Y { get; set; }
+
         private static Random _randoTron = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
 
         private static OnlyApple onlyAppleInstance;
@@ -24,9 +29,8 @@ namespace SnakeLab.Entities
                 RadiusY = 10
             };
             UIElement = rect;
-            //тут вказувати ColumnCount, ElementSize
-            X = _randoTron.Next(0, 5) * size;
-            Y = _randoTron.Next(0, 5) * size;
+            X = _randoTron.Next(4, 5) * size;
+            Y = _randoTron.Next(4, 5) * size;
         }
 
         public static OnlyApple getOnlyAppleInstance(int ElementSize)
