@@ -8,17 +8,19 @@ using System.Windows.Shapes;
 
 namespace SnakeLab.Entities
 {
-    class SnakeElement : GameEntity
+    public class SnakeElement : GameEntity
     {
-        public SnakeElement(int size)
+        public SnakeElement(int size, Brush color)
         {
             UIElement = new Rectangle
             {
                 Width = size - 4,
                 Height = size - 4,
-                Fill = Brushes.Green
+                Fill = color
+                //Fill = Brushes.Green
             };
         }
+
         public bool IsHead { get; set; }
     }
 }

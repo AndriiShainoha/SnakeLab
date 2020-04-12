@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace SnakeLab.Entities
 {
-    class Snake
+    abstract class Snake
     {
         private readonly int _elementSize;
 
@@ -16,6 +17,7 @@ namespace SnakeLab.Entities
             _elementSize = elementSize;
         }
 
+        public Brush Color { get; set; }
         public SnakeElement TailBackup { get; set; }
         public List<SnakeElement> Elements { get; set; }
         public MovementDirection MovementDirection { get; set; }
@@ -46,7 +48,7 @@ namespace SnakeLab.Entities
 
         internal void Grow()
         {
-            Elements.Add(new SnakeElement(_elementSize) { X = TailBackup.X, Y = TailBackup.Y });
+            Elements.Add(new SnakeElement(_elementSize, Color) { X = TailBackup.X, Y = TailBackup.Y });
         }
 
         public bool CollisionWithSelf()
@@ -70,7 +72,7 @@ namespace SnakeLab.Entities
 
         internal void PositionFirstElement(int cols, int rows, MovementDirection initialDirection)
         {
-            Elements.Add(new SnakeElement(_elementSize)
+            Elements.Add(new SnakeElement(_elementSize, Color)
             {
                 X = (cols / 2) * _elementSize,
                 Y = (rows / 2) * _elementSize,
@@ -84,7 +86,7 @@ namespace SnakeLab.Entities
             SnakeElement head = Elements[0];
             SnakeElement tail = Elements[Elements.Count - 1];
 
-            TailBackup = new SnakeElement(_elementSize)
+            TailBackup = new SnakeElement(_elementSize, Color)
             {
                 X = tail.X,
                 Y = tail.Y

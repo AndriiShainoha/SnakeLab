@@ -75,10 +75,14 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Entities\Apple.cs" />
+    <Compile Include="Entities\BlueSnake.cs" />
     <Compile Include="Entities\GameEntity.cs" />
+    <Compile Include="Entities\GreenSnake.cs" />
     <Compile Include="Entities\OnlyApple.cs" />
     <Compile Include="Entities\Snake.cs" />
+    <Compile Include="Entities\SnakeCreator.cs" />
     <Compile Include="Entities\SnakeElement.cs" />
+    <Compile Include="Entities\YellowSnake.cs" />
     <Compile Include="GameWorld.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

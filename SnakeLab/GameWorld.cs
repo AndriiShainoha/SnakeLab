@@ -59,7 +59,7 @@ namespace SnakeLab
         }
         private void InitializeSnake()
         {
-            Snake = new Snake(ElementSize);
+            Snake = new Snake(ElementSize, Color);
             Snake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
         }
 

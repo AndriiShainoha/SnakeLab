@@ -9,7 +9,7 @@ using System.Windows.Shapes;
 
 namespace SnakeLab.Entities
 {
-    class OnlyApple
+    public class OnlyApple
     {
         public UIElement UIElement { get; set; }
         public int X { get; set; }
