@@ -15,10 +15,9 @@ namespace SnakeLab.Entities
         public int X { get; set; }
         public int Y { get; set; }
 
-        private static Random _randoTron = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
-
         private static DemoApple onlyAppleInstance;
-        public DemoApple(int size)
+
+        private DemoApple(int size)
         {
             Rectangle rect = new Rectangle
             {
@@ -29,8 +28,8 @@ namespace SnakeLab.Entities
                 RadiusY = 10
             };
             UIElement = rect;
-            X = _randoTron.Next(4, 5) * size;
-            Y = _randoTron.Next(4, 5) * size;
+            X = size;
+            Y = size;
         }
 
         public static DemoApple getOnlyAppleInstance(int ElementSize)

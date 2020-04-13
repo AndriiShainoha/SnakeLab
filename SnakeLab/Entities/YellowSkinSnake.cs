@@ -7,14 +7,13 @@ using System.Windows.Media;
 
 namespace SnakeLab.Entities
 {
-    class GreenSnake : Snake
+    class YellowSkinSnake : Snake
     {
-        public GreenSnake(int elementSize)
+        public YellowSkinSnake(int elementSize)
         {
-            base.Color = Brushes.Green;
+            base.Color = Brushes.Yellow;
             Elements = new List<SnakeElement>();
             _elementSize = elementSize;
         }
-
     }
 }

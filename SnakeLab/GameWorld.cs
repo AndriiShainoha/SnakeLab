@@ -20,7 +20,6 @@ namespace SnakeLab
         public double GameAreaWidth { get; private set; }
         public double GameAreaHeight { get; private set; }
         Random _randoTron;
-
         public Apple Apple { get; set; }
         public Snake Snake { get; set; }
 
@@ -44,7 +43,7 @@ namespace SnakeLab
             InitializeSnake();
             InitializeTimer(difficulty);
             IsRunning = true;
-            IsRunning = true;
+            //IsRunning = true; тут забрати
         }
 
         private void InitializeTimer(int difficulty)
@@ -57,24 +56,25 @@ namespace SnakeLab
             _gameLoopTimer.Tick += MainGameLoop;
             _gameLoopTimer.Start();
         }
+
         private void InitializeSnake()
         {
             SnakeCreator snakeCreator;
             if(mainWindow.BlueColor.IsChecked == true)
             {
-                snakeCreator = new BlueSnakeCreator();
+                snakeCreator = new BlueSkinSnakeCreator();
                 Snake = snakeCreator.Create(ElementSize);
             }
 
             if (mainWindow.GreenColor.IsChecked == true)
             {
-                snakeCreator = new GreenSnakeCreator();
+                snakeCreator = new GreenSkinSnakeCreator();
                 Snake = snakeCreator.Create(ElementSize);
             }
 
             if (mainWindow.YellowColor.IsChecked == true)
             {
-                snakeCreator = new YellowSnakeCreator();
+                snakeCreator = new YellowSkinSnakeCreator();
                 Snake = snakeCreator.Create(ElementSize);
             }
             Snake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
@@ -213,6 +213,8 @@ namespace SnakeLab
 
         private void CreateOnlyApple()
         {
+            if (Apple != null)
+                return;
             DemoApple onlyApple = DemoApple.getOnlyAppleInstance(ElementSize);
         }
 

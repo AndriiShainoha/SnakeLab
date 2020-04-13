@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace SnakeLab
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -108,20 +105,19 @@ namespace SnakeLab
                 ApplesLbl.Content = "";
                 ScoreLbl.Content = "";
                 LevelLbl.Content = "";
+                DifficultyLabel.Content = "";
+                DiffLabel.Content = "";
             }
         }
 
         private void OptionsClick(object sender, RoutedEventArgs e)
         {
-            if (demoCheckBox.IsChecked == true)
-            {
-                DifficultyLabel.Content = "";
-                //DifficultySlider.
-            }
+            CheckDemoCheckBox();
             StartBtn.IsEnabled = !StartBtn.IsEnabled;
             RestartBtn.IsEnabled = !RestartBtn.IsEnabled;
             this.DialogHost.IsOpen = !this.DialogHost.IsOpen;
         }
+
         internal void IncrementScore()
         {
             apples += 1;

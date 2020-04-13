@@ -9,7 +9,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Title="Super Snakinator" Height="450" Width="800" KeyUp="Window_KeyUp">
+        Title="SnakeGame" Height="450" Width="800" KeyUp="Window_KeyUp">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
@@ -61,7 +61,7 @@
                     </StackPanel>
                     <Label x:Name="DifficultyLabel" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Difficulty</Label>
                     <Slider Grid.Row="3" Grid.Column="1" Minimum="1" Maximum="10" Value="1" Margin="10" x:Name="DifficultySlider" ></Slider>
-                    <Label Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
+                    <Label Grid.Row="4" x:Name="DiffLabel" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
                     <Slider Grid.Row="4" Grid.Column="1" Minimum="10" Maximum="40" Value="1" Margin="10" x:Name="ElementSizeSlider" ></Slider>
                 </Grid>
             </md:DialogHost.DialogContent>
