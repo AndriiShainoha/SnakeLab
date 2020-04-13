@@ -59,10 +59,6 @@ namespace SnakeLab
         }
         private void InitializeSnake()
         {
-            /*switch (mainWindow.GreenColor.IsChecked)
-            {
-
-            }*/
             SnakeCreator snakeCreator;
             if(mainWindow.BlueColor.IsChecked == true)
             {
@@ -146,8 +142,8 @@ namespace SnakeLab
 
         private void DrawOnlyApple()
         {
-            if (!mainWindow.GameWorld.Children.Contains(OnlyApple.getOnlyAppleInstance(ElementSize).UIElement))
-                mainWindow.GameWorld.Children.Add(OnlyApple.getOnlyAppleInstance(ElementSize).UIElement);
+            if (!mainWindow.GameWorld.Children.Contains(DemoApple.getOnlyAppleInstance(ElementSize).UIElement))
+                mainWindow.GameWorld.Children.Add(DemoApple.getOnlyAppleInstance(ElementSize).UIElement);
             Canvas.SetLeft(Apple.UIElement, Apple.X + 2);
             Canvas.SetTop(Apple.UIElement, Apple.Y + 2);
         }
@@ -217,7 +213,7 @@ namespace SnakeLab
 
         private void CreateOnlyApple()
         {
-            OnlyApple onlyApple = OnlyApple.getOnlyAppleInstance(ElementSize);
+            DemoApple onlyApple = DemoApple.getOnlyAppleInstance(ElementSize);
         }
 
         private bool CollisionWithWorldBounds()

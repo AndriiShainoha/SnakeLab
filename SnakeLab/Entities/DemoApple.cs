@@ -9,7 +9,7 @@ using System.Windows.Shapes;
 
 namespace SnakeLab.Entities
 {
-    public class OnlyApple
+    public class DemoApple
     {
         public UIElement UIElement { get; set; }
         public int X { get; set; }
@@ -17,8 +17,8 @@ namespace SnakeLab.Entities
 
         private static Random _randoTron = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
 
-        private static OnlyApple onlyAppleInstance;
-        public OnlyApple(int size)
+        private static DemoApple onlyAppleInstance;
+        public DemoApple(int size)
         {
             Rectangle rect = new Rectangle
             {
@@ -33,18 +33,18 @@ namespace SnakeLab.Entities
             Y = _randoTron.Next(4, 5) * size;
         }
 
-        public static OnlyApple getOnlyAppleInstance(int ElementSize)
+        public static DemoApple getOnlyAppleInstance(int ElementSize)
         {
             if (onlyAppleInstance == null)
             {
-                onlyAppleInstance = new OnlyApple(ElementSize);
+                onlyAppleInstance = new DemoApple(ElementSize);
             }
             return onlyAppleInstance;
         }
 
         public override bool Equals(object obj)
         {
-            if (obj is OnlyApple onlyApple)
+            if (obj is DemoApple onlyApple)
                 return X == onlyApple.X && Y == onlyApple.Y;
             else
                 return false;

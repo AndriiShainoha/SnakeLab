@@ -80,7 +80,7 @@
     <Compile Include="Entities\GameEntity.cs" />
     <Compile Include="Entities\GreenSnake.cs" />
     <Compile Include="Entities\GreenSnakeCreator.cs" />
-    <Compile Include="Entities\OnlyApple.cs" />
+    <Compile Include="Entities\DemoApple.cs" />
     <Compile Include="Entities\Snake.cs" />
     <Compile Include="Entities\SnakeCreator.cs" />
     <Compile Include="Entities\SnakeElement.cs" />

@@ -27,14 +27,14 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            <CheckBox x:Name="demoCheckBox" Grid.Row="0"  IsThreeState="True" IsChecked="False" Margin="5" Height="20" Content="DemoGame" />
-            <Button Width="100" Grid.Row="1" Margin="5" Content="Start" x:Name="StartBtn" Click="StartClick"/>
+            <CheckBox x:Name="demoCheckBox" Grid.Row="0" Content="DemoGame"  IsThreeState="True" IsChecked="False" Margin="5" Height="20"/>
+            <Button Width="100" Grid.Row="1" Margin="5" Content="StartGame" x:Name="StartBtn" Click="StartClick"/>
             <Button Width="100" Grid.Row="2" Margin="5" Content="Restart" x:Name="RestartBtn" Click="RestartClick"/>
             <Button Width="100" Grid.Row="3" Margin="5" Content="Options" Click="OptionsClick"/>
             <GridSplitter Style="{StaticResource MaterialDesignGridSplitter}" Height="5" Grid.Row="3" Width="100" HorizontalAlignment="Center" Margin="0,20"></GridSplitter>
-            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="LevelLbl" FontSize="19" Grid.Row="4" HorizontalAlignment="Left">Level: 1</Label>
-            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="ScoreLbl" FontSize="19" Grid.Row="5" HorizontalAlignment="Left">Score: 1</Label>
-            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="ApplesLbl" FontSize="19" Grid.Row="6" HorizontalAlignment="Left">Apples: 1</Label>
+            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="ApplesLbl" FontSize="19" Grid.Row="4" HorizontalAlignment="Left">Apples: 1</Label>
+            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="LevelLbl" FontSize="19" Grid.Row="5" HorizontalAlignment="Left">Level: 1</Label>
+            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="ScoreLbl" FontSize="19" Grid.Row="6" HorizontalAlignment="Left">Score: 1</Label>
             <GridSplitter Style="{StaticResource MaterialDesignGridSplitter}" Height="5" Grid.Row="7" Width="100" HorizontalAlignment="Center" Margin="0,20"></GridSplitter>
         </Grid>
         <GridSplitter Grid.Column="1" Width="7" Style="{StaticResource MaterialDesignGridSplitter}" ></GridSplitter>
@@ -59,7 +59,7 @@
                         <RadioButton Grid.Row="2" Grid.Column="2" Margin="5" x:Name="GreenColor" Content="Green"></RadioButton>
                         <RadioButton Grid.Row="2" Grid.Column="3" Margin="5" x:Name="YellowColor" Content="Yellow"></RadioButton>
                     </StackPanel>
-                    <Label Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Difficulty</Label>
+                    <Label x:Name="DifficultyLabel" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Difficulty</Label>
                     <Slider Grid.Row="3" Grid.Column="1" Minimum="1" Maximum="10" Value="1" Margin="10" x:Name="DifficultySlider" ></Slider>
                     <Label Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
                     <Slider Grid.Row="4" Grid.Column="1" Minimum="10" Maximum="40" Value="1" Margin="10" x:Name="ElementSizeSlider" ></Slider>

@@ -24,11 +24,6 @@ namespace SnakeLab
         public MainWindow()
         {
             InitializeComponent();
-            if (demoCheckBox.IsChecked == true) 
-            {
-                //x: Name = "LevelLbl
-                //LevelLbl.Visibility = 
-            }
         }
 
         private GameWorld _gameWorld;
@@ -78,6 +73,7 @@ namespace SnakeLab
 
         private void RestartClick(object sender, RoutedEventArgs e)
         {
+            CheckDemoCheckBox();
             _gameWorld.StopGame();
             _gameWorld = new GameWorld(this);
             GameWorld.Children.Clear();
@@ -91,21 +87,13 @@ namespace SnakeLab
         private void PauseGame()
         {
             _gameWorld.PauseGame();
-            MessageBox.Show("Fortfahren?", "Spiel pausiert");
+            MessageBox.Show("Continue", "GamePaused");
             _gameWorld.ContinueGame();
         }
 
-        /*private void DemoClick(object sender, RoutedEventArgs e)
-        {
-            if (!_gameWorld.IsRunning)
-            {
-                _gameWorld.InitializeGame((int)DifficultySlider.Value, (int)ElementSizeSlider.Value);
-                DemoBtn.IsEnabled = false;
-            }
-        }*/
-
         private void StartClick(object sender, RoutedEventArgs e)
         {
+            CheckDemoCheckBox();
             if (!_gameWorld.IsRunning)
             {
                 _gameWorld.InitializeGame((int)DifficultySlider.Value, (int)ElementSizeSlider.Value);
@@ -113,8 +101,23 @@ namespace SnakeLab
             }
         }
 
+        private void CheckDemoCheckBox()
+        {
+            if (demoCheckBox.IsChecked == true)
+            {
+                ApplesLbl.Content = "";
+                ScoreLbl.Content = "";
+                LevelLbl.Content = "";
+            }
+        }
+
         private void OptionsClick(object sender, RoutedEventArgs e)
         {
+            if (demoCheckBox.IsChecked == true)
+            {
+                DifficultyLabel.Content = "";
+                //DifficultySlider.
+            }
             StartBtn.IsEnabled = !StartBtn.IsEnabled;
             RestartBtn.IsEnabled = !RestartBtn.IsEnabled;
             this.DialogHost.IsOpen = !this.DialogHost.IsOpen;
