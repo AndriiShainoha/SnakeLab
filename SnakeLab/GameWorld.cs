@@ -59,8 +59,30 @@ namespace SnakeLab
         }
         private void InitializeSnake()
         {
-            Snake = new Snake(ElementSize, Color);
+            /*switch (mainWindow.GreenColor.IsChecked)
+            {
+
+            }*/
+            SnakeCreator snakeCreator;
+            if(mainWindow.BlueColor.IsChecked == true)
+            {
+                snakeCreator = new BlueSnakeCreator();
+                Snake = snakeCreator.Create(ElementSize);
+            }
+
+            if (mainWindow.GreenColor.IsChecked == true)
+            {
+                snakeCreator = new GreenSnakeCreator();
+                Snake = snakeCreator.Create(ElementSize);
+            }
+
+            if (mainWindow.YellowColor.IsChecked == true)
+            {
+                snakeCreator = new YellowSnakeCreator();
+                Snake = snakeCreator.Create(ElementSize);
+            }
             Snake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
+            
         }
 
         private void MainGameLoop(object sender, EventArgs e)

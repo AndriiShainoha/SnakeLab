@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace SnakeLab.Entities
 {
-    abstract class SnakeCreator
+    class BlueSnakeCreator : SnakeCreator
     {
-        public abstract Snake Create(int elementSize);
+        public override Snake Create(int elementSize)
+        {
+            return new BlueSnake(elementSize);
+        }
     }
 }

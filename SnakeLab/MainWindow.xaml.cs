@@ -94,6 +94,7 @@ namespace SnakeLab
             MessageBox.Show("Fortfahren?", "Spiel pausiert");
             _gameWorld.ContinueGame();
         }
+
         /*private void DemoClick(object sender, RoutedEventArgs e)
         {
             if (!_gameWorld.IsRunning)

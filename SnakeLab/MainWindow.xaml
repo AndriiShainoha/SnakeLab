@@ -52,14 +52,17 @@
                         <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0" Grid.ColumnSpan="2" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Gamesettings</Label>
-                    <Label Grid.Row="1" Grid.ColumnSpan="2" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19"></Label>
-                    <Label Grid.Row="2" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Difficulty</Label>
-                    <Slider Grid.Row="2" Grid.Column="1" Minimum="1" Maximum="10" Value="1" Margin="10" x:Name="DifficultySlider" ></Slider>
-                    <Label Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
-                    <Slider Grid.Row="3" Grid.Column="1" Minimum="10" Maximum="40" Value="1" Margin="10" x:Name="ElementSizeSlider" ></Slider>
-                    <Label Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">SnakeColor</Label>
-                    
+                    <Label Grid.Row="0" Grid.ColumnSpan="2" FontWeight="ExtraBold" Margin="5" VerticalAlignment="Center" FontSize="19">Gamesettings</Label>
+                    <Label Grid.Row="1" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">SnakeColor</Label>
+                    <StackPanel Grid.Row="2" Orientation="Horizontal">
+                        <RadioButton Grid.Row="2" Grid.Column="1" Margin="5"  x:Name="BlueColor" Content="Blue" IsChecked="True"></RadioButton>
+                        <RadioButton Grid.Row="2" Grid.Column="2" Margin="5" x:Name="GreenColor" Content="Green"></RadioButton>
+                        <RadioButton Grid.Row="2" Grid.Column="3" Margin="5" x:Name="YellowColor" Content="Yellow"></RadioButton>
+                    </StackPanel>
+                    <Label Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Difficulty</Label>
+                    <Slider Grid.Row="3" Grid.Column="1" Minimum="1" Maximum="10" Value="1" Margin="10" x:Name="DifficultySlider" ></Slider>
+                    <Label Grid.Row="4" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
+                    <Slider Grid.Row="4" Grid.Column="1" Minimum="10" Maximum="40" Value="1" Margin="10" x:Name="ElementSizeSlider" ></Slider>
                 </Grid>
             </md:DialogHost.DialogContent>
             <md:Card Padding="32" Margin="16">

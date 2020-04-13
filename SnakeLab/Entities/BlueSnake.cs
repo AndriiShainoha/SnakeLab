@@ -9,9 +9,11 @@ namespace SnakeLab.Entities
 {
     class BlueSnake : Snake
     {
-        public BlueSnake(int elementSize) :base(elementSize)
+        public BlueSnake(int elementSize)
         {
             base.Color = Brushes.Blue;
+            Elements = new List<SnakeElement>();
+            _elementSize = elementSize;
         }
     }
 }

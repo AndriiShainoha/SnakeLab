@@ -9,13 +9,13 @@ namespace SnakeLab.Entities
 {
     abstract class Snake
     {
-        private readonly int _elementSize;
+        public int _elementSize { get; set; }
 
-        public Snake(int elementSize)
+        /*public Snake(int elementSize)
         {
             Elements = new List<SnakeElement>();
             _elementSize = elementSize;
-        }
+        }*/
 
         public Brush Color { get; set; }
         public SnakeElement TailBackup { get; set; }

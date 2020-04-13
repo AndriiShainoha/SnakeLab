@@ -9,9 +9,11 @@ namespace SnakeLab.Entities
 {
     class YellowSnake : Snake
     {
-        public YellowSnake(int elementSize) : base(elementSize)
+        public YellowSnake(int elementSize)
         {
             base.Color = Brushes.Yellow;
+            Elements = new List<SnakeElement>();
+            _elementSize = elementSize;
         }
     }
 }

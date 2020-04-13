@@ -17,7 +17,6 @@ namespace SnakeLab.Entities
                 Width = size - 4,
                 Height = size - 4,
                 Fill = color
-                //Fill = Brushes.Green
             };
         }
 
