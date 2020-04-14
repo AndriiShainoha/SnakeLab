@@ -78,7 +78,6 @@ namespace SnakeLab
                 SimpleSnake = snakeCreator.Create(ElementSize);
             }
             SimpleSnake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
-            
         }
 
         private void MainGameLoop(object sender, EventArgs e)
