@@ -7,7 +7,7 @@ using System.Windows.Media;
 
 namespace SnakeLab.Entities
 {
-    class YellowSkinSnake : Snake
+    class YellowSkinSnake : SimpleSnake
     {
         public YellowSkinSnake(int elementSize)
         {

@@ -8,6 +8,6 @@ namespace SnakeLab.Entities
 {
     abstract class SnakeCreator
     {
-        public abstract Snake Create(int elementSize);
+        public abstract SimpleSnake Create(int elementSize);
     }
 }

@@ -21,7 +21,7 @@ namespace SnakeLab
         public double GameAreaHeight { get; private set; }
         Random _randoTron;
         public Apple Apple { get; set; }
-        public Snake Snake { get; set; }
+        public SimpleSnake SimpleSnake { get; set; }
 
         DispatcherTimer _gameLoopTimer;
         public bool IsRunning { get; set; }
@@ -63,27 +63,27 @@ namespace SnakeLab
             if(mainWindow.BlueColor.IsChecked == true)
             {
                 snakeCreator = new BlueSkinSnakeCreator();
-                Snake = snakeCreator.Create(ElementSize);
+                SimpleSnake = snakeCreator.Create(ElementSize);
             }
 
             if (mainWindow.GreenColor.IsChecked == true)
             {
                 snakeCreator = new GreenSkinSnakeCreator();
-                Snake = snakeCreator.Create(ElementSize);
+                SimpleSnake = snakeCreator.Create(ElementSize);
             }
 
             if (mainWindow.YellowColor.IsChecked == true)
             {
                 snakeCreator = new YellowSkinSnakeCreator();
-                Snake = snakeCreator.Create(ElementSize);
+                SimpleSnake = snakeCreator.Create(ElementSize);
             }
-            Snake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
+            SimpleSnake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
             
         }
 
         private void MainGameLoop(object sender, EventArgs e)
         {
-            Snake.MoveSnake();
+            SimpleSnake.MoveSnake();
             CheckCollision();
             CreateApple();
             Draw();
@@ -91,7 +91,7 @@ namespace SnakeLab
 
         private void MainGameOnlyLoop(object sender, EventArgs e)
         {
-            Snake.MoveSnake();
+            SimpleSnake.MoveSnake();
             CheckCollision();
             CreateOnlyApple();
             Draw();
@@ -123,7 +123,7 @@ namespace SnakeLab
         }
         private void DrawSnake()
         {
-            foreach (var snakeElement in Snake.Elements)
+            foreach (var snakeElement in SimpleSnake.Elements)
             {
                 if (!mainWindow.GameWorld.Children.Contains(snakeElement.UIElement))
                     mainWindow.GameWorld.Children.Add(snakeElement.UIElement);
@@ -176,7 +176,7 @@ namespace SnakeLab
         {
             if (CollisionWithApple())
                 ProcessCollisionWithApple();
-            if (Snake.CollisionWithSelf() || CollisionWithWorldBounds())
+            if (SimpleSnake.CollisionWithSelf() || CollisionWithWorldBounds())
             {
                 mainWindow.GameOver();
                 StopGame();
@@ -185,9 +185,9 @@ namespace SnakeLab
 
         private bool CollisionWithApple()
         {
-            if (Apple == null || Snake == null || Snake.Head == null)
+            if (Apple == null || SimpleSnake == null || SimpleSnake.Head == null)
                 return false;
-            SnakeElement head = Snake.Head;
+            SnakeElement head = SimpleSnake.Head;
             return (head.X == Apple.X && head.Y == Apple.Y);
         }
 
@@ -196,7 +196,7 @@ namespace SnakeLab
             mainWindow.IncrementScore();
             mainWindow.GameWorld.Children.Remove(Apple.UIElement);
             Apple = null;
-            Snake.Grow();
+            SimpleSnake.Grow();
             IncreaseGameSpeed();
         }
 
@@ -220,9 +220,9 @@ namespace SnakeLab
 
         private bool CollisionWithWorldBounds()
         {
-            if (Snake == null || Snake.Head == null)
+            if (SimpleSnake == null || SimpleSnake.Head == null)
                 return false;
-            var snakeHead = Snake.Head;
+            var snakeHead = SimpleSnake.Head;
             return (snakeHead.X > GameAreaWidth - ElementSize ||
                 snakeHead.Y > GameAreaHeight - ElementSize ||
                 snakeHead.X < 0 || snakeHead.Y < 0);
@@ -254,8 +254,8 @@ namespace SnakeLab
 
         internal void UpdateMovementDirection(MovementDirection movementDirection)
         {
-            if (Snake != null)
-                Snake.UpdateMovementDirection(movementDirection);
+            if (SimpleSnake != null)
+                SimpleSnake.UpdateMovementDirection(movementDirection);
         }
     }
 }

@@ -81,6 +81,7 @@
     <Compile Include="Entities\GreenSkinSnake.cs" />
     <Compile Include="Entities\GreenSkinSnakeCreator.cs" />
     <Compile Include="Entities\DemoApple.cs" />
+    <Compile Include="Entities\SimpleSnake.cs" />
     <Compile Include="Entities\Snake.cs" />
     <Compile Include="Entities\SnakeCreator.cs" />
     <Compile Include="Entities\SnakeElement.cs" />

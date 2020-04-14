@@ -8,7 +8,7 @@ namespace SnakeLab.Entities
 {
     class GreenSkinSnakeCreator : SnakeCreator
     {
-        public override Snake Create(int elementSize)
+        public override SimpleSnake Create(int elementSize)
         {
             return new GreenSkinSnake(elementSize);
         }
