@@ -43,7 +43,6 @@ namespace SnakeLab
             InitializeSnake();
             InitializeTimer(difficulty);
             IsRunning = true;
-            //IsRunning = true; тут забрати
         }
 
         private void InitializeTimer(int difficulty)
