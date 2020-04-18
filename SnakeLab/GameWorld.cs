@@ -21,7 +21,7 @@ namespace SnakeLab
         public double GameAreaHeight { get; private set; }
         Random _randoTron;
         public Apple Apple { get; set; }
-        public SimpleSnake SimpleSnake { get; set; }
+        public SimpleSnake SimpleSnake { get; set; } 
 
         DispatcherTimer _gameLoopTimer;
         public bool IsRunning { get; set; }

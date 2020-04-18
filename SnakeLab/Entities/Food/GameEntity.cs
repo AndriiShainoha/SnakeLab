@@ -7,7 +7,7 @@ using System.Windows;
 
 namespace SnakeLab.Entities
 {
-    public class GameEntity
+    public abstract class GameEntity
     {
         public UIElement UIElement { get; set; }
         public int X { get; set; }
