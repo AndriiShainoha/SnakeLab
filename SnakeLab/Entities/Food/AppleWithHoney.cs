@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace SnakeLab.Entities.Food
 {
-    class AppleWithHoney : FoodDecorator
+    /*class AppleWithHoney : FoodDecorator
     {
         public AppleWithHoney() : base()
         {
 
         }
-    }
+    }*/
 }
