@@ -21,8 +21,8 @@ namespace SnakeLab
         public double GameAreaWidth { get; private set; }
         public double GameAreaHeight { get; private set; }
         Random _randoTron;
-        public Apple Apple { get; set; }
-        public SimpleSnake SimpleSnake { get; set; } 
+        private Apple Apple { get; set; }
+        private SimpleSnake SimpleSnake { get; set; } 
 
         DispatcherTimer _gameLoopTimer;
         public bool IsRunning { get; set; }
@@ -209,7 +209,7 @@ namespace SnakeLab
                     i++;
                     return;
                 }
-                Apple = new RedApple(ElementSize)
+                Apple = new ClassicApple(ElementSize)
                 {
                     X = _randoTron.Next(0, ColumnCount) * ElementSize,
                     Y = _randoTron.Next(0, RowCount) * ElementSize

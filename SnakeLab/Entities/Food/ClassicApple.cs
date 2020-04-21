@@ -8,9 +8,9 @@ using System.Windows.Shapes;
 
 namespace SnakeLab.Entities.Food
 {
-    public class RedApple : Apple
+    public class ClassicApple : Apple
     {
-        public RedApple(int size)
+        public ClassicApple(int size)
         {
             Rectangle rect = new Rectangle
             {
