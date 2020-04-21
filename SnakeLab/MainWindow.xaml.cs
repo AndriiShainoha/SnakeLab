@@ -143,7 +143,6 @@ namespace SnakeLab
                 ApplesLbl.Content = $"Apples: {apples}";
                 ScoreLbl.Content = $"Score: {score}";
                 LevelLbl.Content = $"Level: {level }";
-                
             }
         }
     }

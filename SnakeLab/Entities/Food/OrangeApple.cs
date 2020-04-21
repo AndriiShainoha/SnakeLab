@@ -8,19 +8,19 @@ using System.Windows.Shapes;
 
 namespace SnakeLab.Entities.Food
 {
-    public class HoneyApple : FoodDecorator 
+    public class OrangeApple : FoodDecorator
     {
-        public HoneyApple(int size, Apple apple): base(apple)
+        public OrangeApple(int size, Apple apple) : base(apple)
         {
             Rectangle rect = new Rectangle
             {
                 Width = size - 4,
                 Height = size - 4,
-                Fill = Brushes.Red,
+                Fill = Brushes.GreenYellow,
                 RadiusX = 10,
                 RadiusY = 10
             };
-            rect.Stroke = Brushes.Yellow;
+            rect.Stroke = Brushes.Orange;
             rect.StrokeThickness = 5;
             UIElement = rect;
         }
