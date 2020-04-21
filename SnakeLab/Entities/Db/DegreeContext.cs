@@ -9,6 +9,10 @@ namespace SnakeLab.Entities.Db
 {
     public class DegreeContext : DbContext
     {
+        public DegreeContext() : base("DefaultConnection")
+        {
+
+        }
         public DbSet<Degree> Degrees { get; set; }
     }
 }

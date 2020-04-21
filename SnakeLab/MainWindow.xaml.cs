@@ -132,14 +132,11 @@ namespace SnakeLab
         {
             using (IDegreeWarehouse degreeWarehouse = new DegreeWarehouseStoreProxy())
             {
-                /*if (level >= 1 || level <= 6)
-                {}*/
-                //Degree degree1 = degreeWarehouse.GetDegree(1);
-
-                //Degree degree2 = degreeWarehouse.GetDegree(2);
-
-                //degree1 = degreeWarehouse.GetDegree(1);
-
+                if (level >= 6 && level <= 14)     //тут поміняти на &&
+                {
+                    Degree degreeMedium = degreeWarehouse.GetDegree(2);
+                    DegreeLbl.Content = $"Degree : {degreeMedium.DegreeName}";
+                }
                 ApplesLbl.Content = $"Apples: {apples}";
                 ScoreLbl.Content = $"Score: {score}";
                 LevelLbl.Content = $"Level: {level }";

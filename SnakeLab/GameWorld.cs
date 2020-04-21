@@ -215,7 +215,7 @@ namespace SnakeLab
                     Y = _randoTron.Next(0, RowCount) * ElementSize
                 };
             }
-            else
+            else if(i < 10)
             {
                 if (Apple != null)
                 {
@@ -223,6 +223,19 @@ namespace SnakeLab
                     return;
                 }
                 Apple = new HoneyApple(ElementSize, Apple)
+                {
+                    X = _randoTron.Next(0, ColumnCount) * ElementSize,
+                    Y = _randoTron.Next(0, RowCount) * ElementSize
+                };
+            }
+            else
+            {
+                if (Apple != null)
+                {
+                    i++;
+                    return;
+                }
+                Apple = new OrangeApple(ElementSize, Apple)
                 {
                     X = _randoTron.Next(0, ColumnCount) * ElementSize,
                     Y = _randoTron.Next(0, RowCount) * ElementSize
