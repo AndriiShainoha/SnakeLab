@@ -1,4 +1,5 @@
 ﻿using SnakeLab.Entities;
+using SnakeLab.Entities.Db;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -129,9 +130,21 @@ namespace SnakeLab
 
         internal void UpdateScore()
         {
-            ApplesLbl.Content = $"Apples: {apples}";
-            ScoreLbl.Content = $"Score: {score}";
-            LevelLbl.Content = $"Level: {level }";
+            using (IDegreeWarehouse degreeWarehouse = new DegreeWarehouseStoreProxy())
+            {
+                /*if (level >= 1 || level <= 6)
+                {}*/
+                //Degree degree1 = degreeWarehouse.GetDegree(1);
+
+                //Degree degree2 = degreeWarehouse.GetDegree(2);
+
+                //degree1 = degreeWarehouse.GetDegree(1);
+
+                ApplesLbl.Content = $"Apples: {apples}";
+                ScoreLbl.Content = $"Score: {score}";
+                LevelLbl.Content = $"Level: {level }";
+                
+            }
         }
     }
 }

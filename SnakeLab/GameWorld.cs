@@ -1,4 +1,5 @@
 ﻿using SnakeLab.Entities;
+using SnakeLab.Entities.Food;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace SnakeLab
         public double GameAreaWidth { get; private set; }
         public double GameAreaHeight { get; private set; }
         Random _randoTron;
-        public Apple Apple { get; set; }
+        public RedApple RedApple { get; set; }
         public SimpleSnake SimpleSnake { get; set; } 
 
         DispatcherTimer _gameLoopTimer;
@@ -132,18 +133,18 @@ namespace SnakeLab
 
         private void DrawApple()
         {
-            if (!mainWindow.GameWorld.Children.Contains(Apple.UIElement))
-                mainWindow.GameWorld.Children.Add(Apple.UIElement);
-            Canvas.SetLeft(Apple.UIElement, Apple.X + 2);
-            Canvas.SetTop(Apple.UIElement, Apple.Y + 2);
+            if (!mainWindow.GameWorld.Children.Contains(RedApple.UIElement))
+                mainWindow.GameWorld.Children.Add(RedApple.UIElement);
+            Canvas.SetLeft(RedApple.UIElement, RedApple.X + 2);
+            Canvas.SetTop(RedApple.UIElement, RedApple.Y + 2);
         }
 
         private void DrawOnlyApple()
         {
             if (!mainWindow.GameWorld.Children.Contains(DemoApple.getOnlyAppleInstance(ElementSize).UIElement))
                 mainWindow.GameWorld.Children.Add(DemoApple.getOnlyAppleInstance(ElementSize).UIElement);
-            Canvas.SetLeft(Apple.UIElement, Apple.X + 2);
-            Canvas.SetTop(Apple.UIElement, Apple.Y + 2);
+            Canvas.SetLeft(RedApple.UIElement, RedApple.X + 2);
+            Canvas.SetTop(RedApple.UIElement, RedApple.Y + 2);
         }
 
         private Line GenerateVerticalWorldLine(int j)
@@ -183,26 +184,26 @@ namespace SnakeLab
 
         private bool CollisionWithApple()
         {
-            if (Apple == null || SimpleSnake == null || SimpleSnake.Head == null)
+            if (RedApple == null || SimpleSnake == null || SimpleSnake.Head == null)
                 return false;
             SnakeElement head = SimpleSnake.Head;
-            return (head.X == Apple.X && head.Y == Apple.Y);
+            return (head.X == RedApple.X && head.Y == RedApple.Y);
         }
 
         private void ProcessCollisionWithApple()
         {
             mainWindow.IncrementScore();
-            mainWindow.GameWorld.Children.Remove(Apple.UIElement);
-            Apple = null;
+            mainWindow.GameWorld.Children.Remove(RedApple.UIElement);
+            RedApple = null;
             SimpleSnake.Grow();
             IncreaseGameSpeed();
         }
 
         private void CreateApple()
         {
-            if (Apple != null)
+            if (RedApple != null)
                 return;
-            Apple = new Apple(ElementSize)
+            RedApple = new RedApple(ElementSize)
             {
                 X = _randoTron.Next(0, ColumnCount) * ElementSize,
                 Y = _randoTron.Next(0, RowCount) * ElementSize
@@ -211,7 +212,7 @@ namespace SnakeLab
 
         private void CreateOnlyApple()
         {
-            if (Apple != null)
+            if (RedApple != null)
                 return;
             DemoApple onlyApple = DemoApple.getOnlyAppleInstance(ElementSize);
         }

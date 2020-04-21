@@ -89,8 +89,9 @@
     <Compile Include="Entities\Db\IDegreeWarehouse.cs" />
     <Compile Include="Entities\Food\Apple.cs" />
     <Compile Include="Entities\Food\FoodDecorator.cs" />
-    <Compile Include="Entities\Food\AppleWithHoney.cs" />
-    <Compile Include="Entities\Food\AppleWithJuice.cs" />
+    <Compile Include="Entities\Food\HoneyApple.cs" />
+    <Compile Include="Entities\Food\JuiceApple.cs" />
+    <Compile Include="Entities\Food\RedApple.cs" />
     <Compile Include="Entities\Snake\BlueSkinSnake.cs" />
     <Compile Include="Entities\Snake\BlueSkinSnakeCreator.cs" />
     <Compile Include="Entities\Food\GameEntity.cs" />
