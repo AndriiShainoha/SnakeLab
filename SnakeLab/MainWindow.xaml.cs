@@ -130,17 +130,9 @@ namespace SnakeLab
 
         internal void UpdateScore()
         {
-            using (IDegreeWarehouse degreeWarehouse = new DegreeWarehouseStoreProxy())
-            {
-                if (level >= 6 && level <= 14)     //тут поміняти на &&
-                {
-                    Degree degreeMedium = degreeWarehouse.GetDegree(2);
-                    DegreeLbl.Content = $"Degree : {degreeMedium.DegreeName}";
-                }
-                ApplesLbl.Content = $"Apples: {apples}";
-                ScoreLbl.Content = $"Score: {score}";
-                LevelLbl.Content = $"Level: {level }";
-            }
+            ApplesLbl.Content = $"Apples: {apples}";
+            ScoreLbl.Content = $"Score: {score}";
+            LevelLbl.Content = $"Level: {level }";
         }
     }
 }

@@ -35,7 +35,7 @@
             <Label Style="{StaticResource MaterialDesignLabel}" x:Name="ApplesLbl" FontSize="19" Grid.Row="4" HorizontalAlignment="Left">Apples: 1</Label>
             <Label Style="{StaticResource MaterialDesignLabel}" x:Name="LevelLbl" FontSize="19" Grid.Row="5" HorizontalAlignment="Left">Level: 1</Label>
             <Label Style="{StaticResource MaterialDesignLabel}" x:Name="ScoreLbl" FontSize="19" Grid.Row="6" HorizontalAlignment="Left">Score: 1</Label>
-            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="DegreeLbl" FontSize="19" Grid.Row="7" HorizontalAlignment="Left">Degree: Beginner</Label>
+            <!--<Label Style="{StaticResource MaterialDesignLabel}" x:Name="DegreeLbl" FontSize="19" Grid.Row="7" HorizontalAlignment="Left">Degree: Beginner</Label>-->
             <GridSplitter Style="{StaticResource MaterialDesignGridSplitter}" Height="5" Grid.Row="7" Width="100" HorizontalAlignment="Center" Margin="0,20"></GridSplitter>
         </Grid>
         <GridSplitter Grid.Column="1" Width="7" Style="{StaticResource MaterialDesignGridSplitter}" ></GridSplitter>
