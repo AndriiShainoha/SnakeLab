@@ -1,5 +1,6 @@
 ﻿using SnakeLab.Entities;
 using SnakeLab.Entities.Db;
+using SnakeLab.Entities.SnakeModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,6 +67,9 @@ namespace SnakeLab
         internal void GameOver()
         {
             _gameWorld.StopGame();
+            _gameWorld.SimpleSnake.FailedAttempt();
+            GameHistory gameHistory = new GameHistory();
+            gameHistory.History.Push(_gameWorld.SimpleSnake.SaveState());
             MessageBox.Show($"You have reached level {level}. Your score is {score}. You ate {apples} apples! ", " Game Over!");
         }
 

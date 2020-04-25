@@ -9,7 +9,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
-        Title="SnakeGame" Height="450" Width="800" KeyUp="Window_KeyUp">
+        Title="SnakeGame" Height="450" Width="749.757" KeyUp="Window_KeyUp">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>

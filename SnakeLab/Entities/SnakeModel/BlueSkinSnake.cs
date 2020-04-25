@@ -15,5 +15,16 @@ namespace SnakeLab.Entities
             Elements = new List<SnakeElement>();
             _elementSize = elementSize;
         }
+
+        public override string GetColor()
+        {
+            string str = "Blue snake has blue color";
+            return str;
+        }
+        public override string GetCharacteristicsOfKind()
+        {
+            string str = "Blue snakes are popular in Africa.";
+            return str;
+        }
     }
 }

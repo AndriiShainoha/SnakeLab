@@ -1,8 +1,10 @@
-﻿using System;
+﻿using SnakeLab.Entities.SnakeModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Media;
 
 namespace SnakeLab.Entities
@@ -14,6 +16,7 @@ namespace SnakeLab.Entities
         public SnakeElement TailBackup { get; set; }
         public List<SnakeElement> Elements { get; set; }
         public SnakeElement Head => Elements.Any() ? Elements[0] : null;
+        private int SnakeLives = 5;
 
         public override void UpdateMovementDirection(MovementDirection up)
         {
@@ -108,8 +111,48 @@ namespace SnakeLab.Entities
             }
             return false;
         }
-    }
 
+        public void FailedAttempt()
+        {
+            if(SnakeLives > 0)
+            {
+                SnakeLives--;
+                MessageBox.Show($"You have {SnakeLives} lives", "Lives");
+            }
+            else
+            {
+                System.Windows.Application.Current.Shutdown();
+            }
+        }
+
+        public SnakeMemento SaveState()
+        {
+            //вивести скільки тіпа життя ше гляну
+            return new SnakeMemento(SnakeLives);
+        }
+
+        public void RestoreState(SnakeMemento snakeMemento)   //мож і не треба
+        {
+            this.SnakeLives = snakeMemento.Lives;
+            //вивести якийсь текст тіпа востановление игри
+        }
+
+        public void GetInfo()
+        {
+            MessageBox.Show(GetColor(), "Information about Snake");
+            MessageBox.Show(GetCharacteristicsOfKind(), "Information about Snake");
+        }
+        public virtual string GetColor()
+        {
+            string str = "Simple Snake hasn't color.";
+            return str;
+        }
+        public virtual string GetCharacteristicsOfKind()
+        {
+            string str = "Simple Snake hasn't characterstics.";
+            return str;
+        }
+    }
 
     enum MovementDirection
     {

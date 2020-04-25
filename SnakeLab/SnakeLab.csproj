@@ -95,6 +95,7 @@
     <Compile Include="Entities\SnakeModel\BlueSkinSnake.cs" />
     <Compile Include="Entities\SnakeModel\BlueSkinSnakeCreator.cs" />
     <Compile Include="Entities\FoodModel\GameEntity.cs" />
+    <Compile Include="Entities\SnakeModel\GameHistory.cs" />
     <Compile Include="Entities\SnakeModel\GreenSkinSnake.cs" />
     <Compile Include="Entities\SnakeModel\GreenSkinSnakeCreator.cs" />
     <Compile Include="Entities\FoodModel\DemoApple.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="Entities\SnakeModel\Snake.cs" />
     <Compile Include="Entities\SnakeModel\SnakeCreator.cs" />
     <Compile Include="Entities\SnakeModel\SnakeElement.cs" />
+    <Compile Include="Entities\SnakeModel\SnakeMemento.cs" />
     <Compile Include="Entities\SnakeModel\YellowSkinSnake.cs" />
     <Compile Include="Entities\SnakeModel\YellowSkinSnakeCreator.cs" />
     <Compile Include="GameWorld.cs" />

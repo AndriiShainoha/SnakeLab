@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Shapes;
@@ -22,7 +23,7 @@ namespace SnakeLab
         public double GameAreaHeight { get; private set; }
         Random _randoTron;
         private Apple Apple { get; set; }
-        private SimpleSnake SimpleSnake { get; set; } 
+        public SimpleSnake SimpleSnake { get; set; } 
 
         DispatcherTimer _gameLoopTimer;
         public bool IsRunning { get; set; }
@@ -64,18 +65,21 @@ namespace SnakeLab
             {
                 snakeCreator = new BlueSkinSnakeCreator();
                 SimpleSnake = snakeCreator.Create(ElementSize);
+                SimpleSnake.GetInfo();
             }
 
             if (mainWindow.GreenColor.IsChecked == true)
             {
                 snakeCreator = new GreenSkinSnakeCreator();
                 SimpleSnake = snakeCreator.Create(ElementSize);
+                SimpleSnake.GetInfo();
             }
 
             if (mainWindow.YellowColor.IsChecked == true)
             {
                 snakeCreator = new YellowSkinSnakeCreator();
                 SimpleSnake = snakeCreator.Create(ElementSize);
+                SimpleSnake.GetInfo();
             }
             SimpleSnake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
         }
