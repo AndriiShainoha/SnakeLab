@@ -95,10 +95,13 @@
     <Compile Include="Entities\SnakeModel\BlueSkinSnake.cs" />
     <Compile Include="Entities\SnakeModel\BlueSkinSnakeCreator.cs" />
     <Compile Include="Entities\FoodModel\GameEntity.cs" />
+    <Compile Include="Entities\SnakeModel\FamishedSimpleSnakeState.cs" />
     <Compile Include="Entities\SnakeModel\GameHistory.cs" />
     <Compile Include="Entities\SnakeModel\GreenSkinSnake.cs" />
     <Compile Include="Entities\SnakeModel\GreenSkinSnakeCreator.cs" />
     <Compile Include="Entities\FoodModel\DemoApple.cs" />
+    <Compile Include="Entities\SnakeModel\HungrySimpleSnakeState.cs" />
+    <Compile Include="Entities\SnakeModel\ISimpleSnakeState.cs" />
     <Compile Include="Entities\SnakeModel\SimpleSnake.cs" />
     <Compile Include="Entities\SnakeModel\Snake.cs" />
     <Compile Include="Entities\SnakeModel\SnakeCreator.cs" />

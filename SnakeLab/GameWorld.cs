@@ -1,5 +1,6 @@
 ﻿using SnakeLab.Entities;
 using SnakeLab.Entities.Food;
+using SnakeLab.Entities.SnakeModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -65,6 +66,7 @@ namespace SnakeLab
             {
                 snakeCreator = new BlueSkinSnakeCreator();
                 SimpleSnake = snakeCreator.Create(ElementSize);
+                SimpleSnake.SetState(new HungrySimpleSnakeState(mainWindow));
                 SimpleSnake.GetInfo();
             }
 
@@ -72,6 +74,7 @@ namespace SnakeLab
             {
                 snakeCreator = new GreenSkinSnakeCreator();
                 SimpleSnake = snakeCreator.Create(ElementSize);
+                SimpleSnake.SetState(new HungrySimpleSnakeState(mainWindow));
                 SimpleSnake.GetInfo();
             }
 
@@ -79,7 +82,9 @@ namespace SnakeLab
             {
                 snakeCreator = new YellowSkinSnakeCreator();
                 SimpleSnake = snakeCreator.Create(ElementSize);
+                SimpleSnake.SetState(new HungrySimpleSnakeState(mainWindow));
                 SimpleSnake.GetInfo();
+
             }
             SimpleSnake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
         }
@@ -92,6 +97,7 @@ namespace SnakeLab
             Draw();
         }
 
+        //SimpleSnake.Eat();   десь ще дописати
         private void MainGameOnlyLoop(object sender, EventArgs e)
         {
             SimpleSnake.MoveSnake();
@@ -208,6 +214,7 @@ namespace SnakeLab
         {
             if (i < 5)
             {
+                SimpleSnake.Eat();
                 if (Apple != null)
                 {
                     i++;
@@ -221,6 +228,7 @@ namespace SnakeLab
             }
             else if(i < 10)
             {
+                //SimpleSnake.Eat();
                 if (Apple != null)
                 {
                     i++;

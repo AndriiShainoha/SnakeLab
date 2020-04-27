@@ -16,7 +16,19 @@ namespace SnakeLab.Entities
         public SnakeElement TailBackup { get; set; }
         public List<SnakeElement> Elements { get; set; }
         public SnakeElement Head => Elements.Any() ? Elements[0] : null;
-        private int SnakeLives = 5;
+        private static int SnakeLives = 5;
+
+        public ISimpleSnakeState simpleSnakeState { get; set; }
+
+        public void SetState(ISimpleSnakeState sw)
+        {
+            simpleSnakeState = sw;
+        }
+
+        public void Eat()
+        {
+            simpleSnakeState.Eat(this);
+        }
 
         public override void UpdateMovementDirection(MovementDirection up)
         {
@@ -127,13 +139,12 @@ namespace SnakeLab.Entities
 
         public SnakeMemento SaveState()
         {
-            //вивести скільки тіпа життя ше гляну
             return new SnakeMemento(SnakeLives);
         }
 
         public void RestoreState(SnakeMemento snakeMemento)   //мож і не треба
         {
-            this.SnakeLives = snakeMemento.Lives;
+            //this.SnakeLives = snakeMemento.Lives;
             //вивести якийсь текст тіпа востановление игри
         }
 
@@ -142,6 +153,7 @@ namespace SnakeLab.Entities
             MessageBox.Show(GetColor(), "Information about Snake");
             MessageBox.Show(GetCharacteristicsOfKind(), "Information about Snake");
         }
+
         public virtual string GetColor()
         {
             string str = "Simple Snake hasn't color.";
