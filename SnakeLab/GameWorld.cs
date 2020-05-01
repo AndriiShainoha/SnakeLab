@@ -209,50 +209,18 @@ namespace SnakeLab
             IncreaseGameSpeed();
         }
 
-        int i = 0;
         private void CreateApple()      // тут погано треба переробити
         {
-            if (i < 5)
+            SimpleSnake.Eat();
+            if (Apple != null)
             {
-                SimpleSnake.Eat();
-                if (Apple != null)
-                {
-                    i++;
-                    return;
-                }
-                Apple = new ClassicApple(ElementSize)
-                {
-                    X = _randoTron.Next(0, ColumnCount) * ElementSize,
-                    Y = _randoTron.Next(0, RowCount) * ElementSize
-                };
+                return;
             }
-            else if(i < 10)
+            Apple = new ClassicApple(ElementSize)
             {
-                //SimpleSnake.Eat();
-                if (Apple != null)
-                {
-                    i++;
-                    return;
-                }
-                Apple = new HoneyApple(ElementSize, Apple)
-                {
-                    X = _randoTron.Next(0, ColumnCount) * ElementSize,
-                    Y = _randoTron.Next(0, RowCount) * ElementSize
-                };
-            }
-            else
-            {
-                if (Apple != null)
-                {
-                    i++;
-                    return;
-                }
-                Apple = new OrangeApple(ElementSize, Apple)
-                {
-                    X = _randoTron.Next(0, ColumnCount) * ElementSize,
-                    Y = _randoTron.Next(0, RowCount) * ElementSize
-                };
-            }
+                X = _randoTron.Next(0, ColumnCount) * ElementSize,
+                Y = _randoTron.Next(0, RowCount) * ElementSize
+            };
         }
 
         private void CreateOnlyApple()

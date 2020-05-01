@@ -9,7 +9,7 @@ namespace SnakeLab.Entities
 {
     class BlueSkinSnake : SimpleSnake
     {
-        public BlueSkinSnake(int elementSize)
+        public BlueSkinSnake(int elementSize, MainWindow mainWindow) : base(mainWindow)
         {
             base.Color = Brushes.Blue;
             Elements = new List<SnakeElement>();

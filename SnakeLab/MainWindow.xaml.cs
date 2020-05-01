@@ -67,9 +67,6 @@ namespace SnakeLab
         internal void GameOver()
         {
             _gameWorld.StopGame();
-            _gameWorld.SimpleSnake.FailedAttempt();
-            GameHistory gameHistory = new GameHistory();
-            gameHistory.History.Push(_gameWorld.SimpleSnake.SaveState());
             MessageBox.Show($"You have reached level {level}. Your score is {score}. You ate {apples} apples! ", " Game Over!");
         }
 
@@ -125,6 +122,9 @@ namespace SnakeLab
 
         internal void IncrementScore()
         {
+            _gameWorld.SimpleSnake.AteApple();
+            GameHistory gameHistory = new GameHistory();
+            gameHistory.History.Push(_gameWorld.SimpleSnake.SaveState());
             apples += 1;
             if (apples % 3 == 0)
                 level += 1;

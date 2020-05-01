@@ -16,7 +16,7 @@ namespace SnakeLab.Entities
         public SnakeElement TailBackup { get; set; }
         public List<SnakeElement> Elements { get; set; }
         public SnakeElement Head => Elements.Any() ? Elements[0] : null;
-        private static int SnakeLives = 5;
+        private int SnakeLives = 1;
 
         public ISimpleSnakeState simpleSnakeState { get; set; }
 
@@ -124,12 +124,12 @@ namespace SnakeLab.Entities
             return false;
         }
 
-        public void FailedAttempt()
+        public void AteApple()
         {
-            if(SnakeLives > 0)
+            if(SnakeLives < 10 )
             {
-                SnakeLives--;
-                MessageBox.Show($"You have {SnakeLives} lives", "Lives");
+                SnakeLives++;
+                //mainWindow.PowerLbl.Content = $"Power:{SnakeLives}";
             }
             else
             {
