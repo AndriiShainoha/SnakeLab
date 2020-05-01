@@ -1,5 +1,6 @@
 ﻿using SnakeLab.Entities;
 using SnakeLab.Entities.Db;
+using SnakeLab.Entities.GameMode;
 using SnakeLab.Entities.SnakeModel;
 using System;
 using System.Collections.Generic;
@@ -70,16 +71,33 @@ namespace SnakeLab
             MessageBox.Show($"You have reached level {level}. Your score is {score}. You ate {apples} apples! ", " Game Over!");
         }
 
-        private void RestartClick(object sender, RoutedEventArgs e)
+        private void RestartClick(object sender, RoutedEventArgs e)  //отут є difficulty slider zrbq складність гри
         {
+            InitializeGameMode();
             CheckDemoCheckBox();
             _gameWorld.StopGame();
             _gameWorld = new GameWorld(this);
             GameWorld.Children.Clear();
             if (!_gameWorld.IsRunning)
             {
-                _gameWorld.InitializeGame((int)DifficultySlider.Value, (int)ElementSizeSlider.Value);
+                _gameWorld.InitializeGame((int)ElementSizeSlider.Value);
                 StartBtn.IsEnabled = false;
+            }
+        }
+
+        private void InitializeGameMode()
+        {
+            if (EasyMode.IsChecked == true)
+            {
+                _gameWorld.SetGameMode(new EasyGameMode());
+            }
+            if (MediumMode.IsChecked == true)
+            {
+                _gameWorld.SetGameMode(new MediumGameMode());
+            }
+            if (HardMode.IsChecked == true)
+            {
+                _gameWorld.SetGameMode(new HardGameMode());
             }
         }
 
@@ -90,12 +108,13 @@ namespace SnakeLab
             _gameWorld.ContinueGame();
         }
 
-        private void StartClick(object sender, RoutedEventArgs e)
+        private void StartClick(object sender, RoutedEventArgs e)     //DifficultySlider
         {
+            InitializeGameMode();
             CheckDemoCheckBox();
             if (!_gameWorld.IsRunning)
             {
-                _gameWorld.InitializeGame((int)DifficultySlider.Value, (int)ElementSizeSlider.Value);
+                _gameWorld.InitializeGame((int)ElementSizeSlider.Value);
                 StartBtn.IsEnabled = false;
             }
         }
@@ -120,15 +139,16 @@ namespace SnakeLab
             this.DialogHost.IsOpen = !this.DialogHost.IsOpen;
         }
 
-        internal void IncrementScore()
+        internal void IncrementScore()               //difficulty slider 
         {
+            int difficulty = _gameWorld.gameMode.GetModeForGame();
             _gameWorld.SimpleSnake.AteApple();
             GameHistory gameHistory = new GameHistory();
             gameHistory.History.Push(_gameWorld.SimpleSnake.SaveState());
             apples += 1;
             if (apples % 3 == 0)
                 level += 1;
-            score += (int)DifficultySlider.Value * level;
+            score += difficulty * level;
             UpdateScore();
         }
 

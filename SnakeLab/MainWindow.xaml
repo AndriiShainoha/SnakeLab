@@ -43,8 +43,9 @@
         <GridSplitter Grid.Column="2" Width="7" Style="{StaticResource MaterialDesignGridSplitter}" Grid.ColumnSpan="3" Margin="0,0,109.2,0" ></GridSplitter>
         <md:DialogHost Grid.Column="0" x:Name="DialogHost" Grid.ColumnSpan="3" Margin="0,0,0.2,0">
             <md:DialogHost.DialogContent>
-                <Grid Width="300" Height="200">
+                <Grid Width="300" Height="300">
                     <Grid.RowDefinitions>
+                        <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -63,9 +64,13 @@
                         <RadioButton Grid.Row="2" Grid.Column="3" Margin="5" x:Name="YellowColor" Content="Yellow"></RadioButton>
                     </StackPanel>
                     <Label x:Name="DifficultyLabel" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Difficulty</Label>
-                    <Slider Grid.Row="3" Grid.Column="1" Minimum="1" Maximum="10" Value="1" Margin="10" x:Name="DifficultySlider" ></Slider>
-                    <Label Grid.Row="4" x:Name="DiffLabel" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
-                    <Slider Grid.Row="4" Grid.Column="1" Minimum="10" Maximum="40" Value="1" Margin="10" x:Name="ElementSizeSlider" ></Slider>
+                    <StackPanel Grid.Row="4" Orientation="Horizontal">
+                        <RadioButton Grid.Row="4" Grid.Column="1" Margin="5"  x:Name="EasyMode" Content="Easy" IsChecked="True"></RadioButton>
+                        <RadioButton Grid.Row="4" Grid.Column="2" Margin="5" x:Name="MediumMode" Content="Medium"></RadioButton>
+                        <RadioButton Grid.Row="4" Grid.Column="3" Margin="5" x:Name="HardMode" Content="Hard"></RadioButton>
+                    </StackPanel>
+                    <Label Grid.Row="5" x:Name="DiffLabel" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontSize="19">Elementsize</Label>
+                    <Slider Grid.Row="5" Grid.Column="1" Minimum="10" Maximum="40" Value="1" Margin="10,15,15,10" x:Name="ElementSizeSlider" ></Slider>
                 </Grid>
             </md:DialogHost.DialogContent>
             <md:Card Padding="32" Margin="16">

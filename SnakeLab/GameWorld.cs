@@ -28,13 +28,20 @@ namespace SnakeLab
 
         DispatcherTimer _gameLoopTimer;
         public bool IsRunning { get; set; }
+        public IGameMode gameMode { get; set; }
+
         public GameWorld(MainWindow mainWindow)
         {
             this.mainWindow = mainWindow;
             _randoTron = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
         }
 
-        public void InitializeGame(int difficulty, int elementSize)
+        public void SetGameMode(IGameMode gameMode)
+        {
+            this.gameMode = gameMode;
+        }
+
+        public void InitializeGame(int elementSize)
         {
             ElementSize = elementSize;
             GameAreaWidth = mainWindow.GameWorld.ActualWidth;
@@ -44,12 +51,13 @@ namespace SnakeLab
 
             DrawGameWorld();
             InitializeSnake();
-            InitializeTimer(difficulty);
+            InitializeTimer();
             IsRunning = true;
         }
 
-        private void InitializeTimer(int difficulty)
+        private void InitializeTimer()
         {
+            int difficulty = gameMode.GetModeForGame();
             var interval = TimeSpan.FromSeconds(0.1 + .9 / difficulty).Ticks;
             _gameLoopTimer = new DispatcherTimer
             {

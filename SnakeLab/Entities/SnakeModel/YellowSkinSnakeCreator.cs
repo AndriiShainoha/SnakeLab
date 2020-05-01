@@ -10,7 +10,7 @@ namespace SnakeLab.Entities
     {
         public override SimpleSnake Create(int elementSize)
         {
-            return new YellowSkinSnake(elementSize, this.mainWindow);
+            return new YellowSkinSnake(elementSize);
         }
     }
 }
