@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnakeLab.Entities.SnakeModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Windows.Media;
 
 namespace SnakeLab.Entities
 {
-    class GreenSkinSnake : SimpleSnake
+    class GreenSkinSnake : SimpleSnake, IAnimal
     {
         public GreenSkinSnake(int elementSize)
         {
@@ -24,6 +25,10 @@ namespace SnakeLab.Entities
         {
             string str = "Green snakes are popular in USA.";
             return str;
+        }
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitGreenSnake(this);
         }
     }
 }

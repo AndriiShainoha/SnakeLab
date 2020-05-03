@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SnakeLab.Entities.SnakeModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,23 +8,29 @@ using System.Windows.Media;
 
 namespace SnakeLab.Entities
 {
-    class YellowSkinSnake : SimpleSnake
+    class BlueSkinSnake : SimpleSnake, IAnimal
     {
-        public YellowSkinSnake(int elementSize)
+        public BlueSkinSnake(int elementSize)
         {
-            base.Color = Brushes.Yellow;
+            base.Color = Brushes.Blue;
             Elements = new List<SnakeElement>();
             _elementSize = elementSize;
         }
+
         public override string GetColor()
         {
-            string str = "Yellow snake has yellow color";
+            string str = "Blue snake has blue color";
             return str;
         }
         public override string GetCharacteristicsOfKind()
         {
-            string str = "Yellow snakes are popular in Australia.";
+            string str = "Blue snakes are popular in Africa.";
             return str;
+        }
+
+        public void Accept(IVisitor visitor)
+        {
+            visitor.VisitBlueSnake(this);
         }
     }
 }

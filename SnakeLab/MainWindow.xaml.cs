@@ -73,7 +73,6 @@ namespace SnakeLab
 
         private void RestartClick(object sender, RoutedEventArgs e)  //отут є difficulty slider zrbq складність гри
         {
-            InitializeGameMode();
             CheckDemoCheckBox();
             _gameWorld.StopGame();
             _gameWorld = new GameWorld(this);
