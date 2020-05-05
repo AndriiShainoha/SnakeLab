@@ -130,6 +130,7 @@ namespace SnakeLab
             }
         }
 
+        // роблю патерн команда для цього
         private void OptionsClick(object sender, RoutedEventArgs e)
         {
             CheckDemoCheckBox();

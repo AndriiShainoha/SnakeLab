@@ -1,4 +1,5 @@
-﻿using SnakeLab.Entities.SnakeModel;
+﻿using SnakeLab.Entities.Observer;
+using SnakeLab.Entities.SnakeModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Windows.Media;
 
 namespace SnakeLab.Entities
 {
-    class BlueSkinSnake : SimpleSnake, IAnimal
+    class BlueSkinSnake : SimpleSnake, IAnimal, IObserver
     {
         public BlueSkinSnake(int elementSize)
         {
@@ -31,6 +32,11 @@ namespace SnakeLab.Entities
         public void Accept(IVisitor visitor)
         {
             visitor.VisitBlueSnake(this);
+        }
+
+        public void ColorChanged(Color newColor)
+        {
+
         }
     }
 }

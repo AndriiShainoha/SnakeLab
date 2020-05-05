@@ -92,6 +92,9 @@
     <Compile Include="Entities\Decorator\HoneyApple.cs" />
     <Compile Include="Entities\Decorator\OrangeApple.cs" />
     <Compile Include="Entities\Decorator\ClassicApple.cs" />
+    <Compile Include="Entities\Observer\ColorSubject.cs" />
+    <Compile Include="Entities\Observer\IObservable.cs" />
+    <Compile Include="Entities\Observer\IObserver.cs" />
     <Compile Include="Entities\StrategyGameMode\EasyGameMode.cs" />
     <Compile Include="Entities\StrategyGameMode\HardGameMode.cs" />
     <Compile Include="Entities\StrategyGameMode\MediumGameMode.cs" />

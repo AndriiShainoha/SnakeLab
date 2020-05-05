@@ -1,5 +1,6 @@
 ﻿using SnakeLab.Entities;
 using SnakeLab.Entities.Food;
+using SnakeLab.Entities.Observer;
 using SnakeLab.Entities.SnakeModel;
 using System;
 using System.Collections.Generic;
@@ -24,7 +25,9 @@ namespace SnakeLab
         public double GameAreaHeight { get; private set; }
         Random _randoTron;
         private Apple Apple { get; set; }
-        public SimpleSnake SimpleSnake { get; set; } 
+        public SimpleSnake SimpleSnake { get; set; }
+
+        public List<IObserver> observers;
 
         DispatcherTimer _gameLoopTimer;
         public bool IsRunning { get; set; }
@@ -34,6 +37,7 @@ namespace SnakeLab
         {
             this.mainWindow = mainWindow;
             _randoTron = new Random(DateTime.Now.Millisecond / DateTime.Now.Second);
+            observers = new List<IObserver>();
         }
 
         public void SetGameMode(IGameMode gameMode)
