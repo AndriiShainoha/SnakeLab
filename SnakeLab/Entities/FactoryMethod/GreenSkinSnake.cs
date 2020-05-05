@@ -17,6 +17,11 @@ namespace SnakeLab.Entities
             Elements = new List<SnakeElement>();
             _elementSize = elementSize;
         }
+        public GreenSkinSnake()
+        {
+
+        }
+
         public override string GetColor()
         {
             string str = "Green snake has green color";

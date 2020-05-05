@@ -18,6 +18,11 @@ namespace SnakeLab.Entities
             _elementSize = elementSize;
         }
 
+        public BlueSkinSnake()
+        {
+
+        }
+
         public override string GetColor()
         {
             string str = "Blue snake has blue color";
@@ -36,7 +41,7 @@ namespace SnakeLab.Entities
 
         public void ColorChanged(Color newColor)
         {
-
+            
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,22 +9,32 @@ namespace SnakeLab.Entities.SnakeModel
 {
     class XmlVisitor : IVisitor
     {
+        private string path = @"D:\SnakeLab3\SnakeLab\HtmlAndXML.txt";
         public void VisitBlueSnake(BlueSkinSnake blueSkinSnake)
         {
             string result = "<BlueSkinSnake><Color>" + blueSkinSnake.Color + "</Color>";
-            //Console.WriteLine(result);    напевно вивисти у якийсь другий файл
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(result);
+            }
         }
 
         public void VisitGreenSnake(GreenSkinSnake greenSkinSnake)
         {
-            string result = "<BlueSkinSnake><Color>" + greenSkinSnake.Color + "</Color>";
-            //Console.WriteLine(result);    напевно вивисти у якийсь другий файл
+            string result = "<GreenSkinSnake><Color>" + greenSkinSnake.Color + "</Color>";
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(result);
+            }
         }
 
         public void VisitYellowSnake(YellowSkinSnake yellowSkinSnake)
         {
-            string result = "<BlueSkinSnake><Color>" + yellowSkinSnake.Color + "</Color>";
-            //Console.WriteLine(result);    напевно вивисти у якийсь другий файл
+            string result = "<YellowSkinSnake><Color>" + yellowSkinSnake.Color + "</Color>";
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                sw.WriteLine(result);
+            }
         }
     }
 }

@@ -17,7 +17,6 @@ namespace SnakeLab.Entities
         public List<SnakeElement> Elements { get; set; }
         public SnakeElement Head => Elements.Any() ? Elements[0] : null;
         private int SnakeLives = 1;
-
         public ISimpleSnakeState simpleSnakeState { get; set; }
 
         public void SetState(ISimpleSnakeState sw)

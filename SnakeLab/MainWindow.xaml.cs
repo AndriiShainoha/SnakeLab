@@ -2,6 +2,7 @@
 using SnakeLab.Entities.Db;
 using SnakeLab.Entities.GameMode;
 using SnakeLab.Entities.SnakeModel;
+using SnakeLab.Entities.Visitor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -107,10 +108,21 @@ namespace SnakeLab
             _gameWorld.ContinueGame();
         }
 
+        private void HtmlAndXmlInfoAboutAnimals()
+        {
+            var zoo = new Zoo();
+            zoo.Add(new BlueSkinSnake());
+            zoo.Add(new GreenSkinSnake());
+            zoo.Add(new YellowSkinSnake());
+            zoo.Accept(new HtmlVisitor());
+            zoo.Accept(new XmlVisitor());
+        }
+
         private void StartClick(object sender, RoutedEventArgs e)     //DifficultySlider
         {
             InitializeGameMode();
             CheckDemoCheckBox();
+            HtmlAndXmlInfoAboutAnimals();
             if (!_gameWorld.IsRunning)
             {
                 _gameWorld.InitializeGame((int)ElementSizeSlider.Value);
