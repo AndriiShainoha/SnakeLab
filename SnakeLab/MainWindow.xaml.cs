@@ -1,6 +1,7 @@
 ﻿using SnakeLab.Entities;
 using SnakeLab.Entities.Db;
 using SnakeLab.Entities.GameMode;
+using SnakeLab.Entities.Observer;
 using SnakeLab.Entities.SnakeModel;
 using SnakeLab.Entities.Visitor;
 using System;
@@ -118,11 +119,18 @@ namespace SnakeLab
             zoo.Accept(new XmlVisitor());
         }
 
+        private void ObserverFunction()
+        {
+            ColorObservable colorObservable = new ColorObservable();
+
+        }
+
         private void StartClick(object sender, RoutedEventArgs e)     //DifficultySlider
         {
             InitializeGameMode();
             CheckDemoCheckBox();
             HtmlAndXmlInfoAboutAnimals();
+
             if (!_gameWorld.IsRunning)
             {
                 _gameWorld.InitializeGame((int)ElementSizeSlider.Value);
@@ -142,7 +150,6 @@ namespace SnakeLab
             }
         }
 
-        // роблю патерн команда для цього
         private void OptionsClick(object sender, RoutedEventArgs e)
         {
             CheckDemoCheckBox();

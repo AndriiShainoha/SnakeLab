@@ -10,7 +10,7 @@ namespace SnakeLab.Entities.Observer
 {
     class ColorObservable : IObservable
     {
-        private Color _Color = Colors.Blue;
+        private Color _Color = Colors.Black;
 
         public Color Color
         {
@@ -25,7 +25,7 @@ namespace SnakeLab.Entities.Observer
             }
         }
 
-        private HashSet<IObserver> _observers = new HashSet<IObserver>();
+        private List<IObserver> _observers = new List<IObserver>();
 
         public void Notify()
         {

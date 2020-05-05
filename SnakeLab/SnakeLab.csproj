@@ -82,17 +82,17 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Entities\Db\Degree.cs" />
-    <Compile Include="Entities\Db\DegreeContext.cs" />
-    <Compile Include="Entities\Db\DegreeWarehouseStore.cs" />
-    <Compile Include="Entities\Db\DegreeWarehouseStoreProxy.cs" />
-    <Compile Include="Entities\Db\IDegreeWarehouse.cs" />
+    <Compile Include="Entities\DbProxy\Degree.cs" />
+    <Compile Include="Entities\DbProxy\DegreeContext.cs" />
+    <Compile Include="Entities\DbProxy\DegreeWarehouseStore.cs" />
+    <Compile Include="Entities\DbProxy\DegreeWarehouseStoreProxy.cs" />
+    <Compile Include="Entities\DbProxy\IDegreeWarehouse.cs" />
     <Compile Include="Entities\FoodModel\Apple.cs" />
     <Compile Include="Entities\Decorator\FoodDecorator.cs" />
     <Compile Include="Entities\Decorator\HoneyApple.cs" />
     <Compile Include="Entities\Decorator\OrangeApple.cs" />
     <Compile Include="Entities\Decorator\ClassicApple.cs" />
-    <Compile Include="Entities\Observer\ColorSubject.cs" />
+    <Compile Include="Entities\Observer\ColorObservable.cs" />
     <Compile Include="Entities\Observer\IObservable.cs" />
     <Compile Include="Entities\Observer\IObserver.cs" />
     <Compile Include="Entities\StrategyGameMode\EasyGameMode.cs" />

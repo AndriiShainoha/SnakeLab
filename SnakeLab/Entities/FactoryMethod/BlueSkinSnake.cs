@@ -41,7 +41,6 @@ namespace SnakeLab.Entities
 
         public void ColorChanged(Color newColor)
         {
-            
         }
     }
 }
