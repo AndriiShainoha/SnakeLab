@@ -168,6 +168,7 @@ namespace SnakeLab
             if (apples % 3 == 0)
                 level += 1;
             score += difficulty * level;
+            //_gameWorld.SerializeInJson(_gameWorld.SimpleSnake);
             UpdateScore();
         }
 

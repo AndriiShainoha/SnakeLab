@@ -1,9 +1,11 @@
-﻿using SnakeLab.Entities;
+﻿using Newtonsoft.Json;
+using SnakeLab.Entities;
 using SnakeLab.Entities.Food;
 using SnakeLab.Entities.Observer;
 using SnakeLab.Entities.SnakeModel;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -98,7 +100,18 @@ namespace SnakeLab
                 SimpleSnake.GetInfo();
 
             }
+            SerializeInJson(SimpleSnake);
             SimpleSnake.PositionFirstElement(ColumnCount, RowCount, MovementDirection.Right);
+        }
+
+        public void SerializeInJson(SimpleSnake simpleSnake)
+        {
+            string path = @"D:\SnakeLab3\SnakeLab\serializer.json";
+            using (StreamWriter sw = File.AppendText(path))
+            {
+                string json = JsonConvert.SerializeObject(simpleSnake);
+                sw.WriteLine(json);
+            }
         }
 
         private void MainGameLoop(object sender, EventArgs e)
