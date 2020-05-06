@@ -125,7 +125,7 @@ namespace SnakeLab
 
         }
 
-        private void StartClick(object sender, RoutedEventArgs e)     //DifficultySlider
+        private void StartClick(object sender, RoutedEventArgs e)     
         {
             InitializeGameMode();
             CheckDemoCheckBox();
@@ -158,7 +158,7 @@ namespace SnakeLab
             this.DialogHost.IsOpen = !this.DialogHost.IsOpen;
         }
 
-        internal void IncrementScore()               //difficulty slider 
+        internal void IncrementScore()            
         {
             int difficulty = _gameWorld.gameMode.GetModeForGame();
             _gameWorld.SimpleSnake.AteApple();
@@ -168,7 +168,6 @@ namespace SnakeLab
             if (apples % 3 == 0)
                 level += 1;
             score += difficulty * level;
-            //_gameWorld.SerializeInJson(_gameWorld.SimpleSnake);
             UpdateScore();
         }
 

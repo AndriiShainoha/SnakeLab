@@ -234,7 +234,7 @@ namespace SnakeLab
             IncreaseGameSpeed();
         }
 
-        private void CreateApple()      // тут погано треба переробити
+        private void CreateApple()   
         {
             SimpleSnake.Eat();
             if (Apple != null)

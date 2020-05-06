@@ -46,3 +46,9 @@
 <BlueSkinSnake><Color></Color>
 <GreenSkinSnake><Color></Color>
 <YellowSkinSnake><Color></Color>
+<table><tr><td>Властивість<td><td>Значення</td></tr><tr><td>Color<td><td></td></tr>
+<table><tr><td>Властивість<td><td>Значення</td></tr><tr><td>Color<td><td></td></tr>
+<table><tr><td>Властивість<td><td>Значення</td></tr><tr><td>Color<td><td></td></tr>
+<BlueSkinSnake><Color></Color>
+<GreenSkinSnake><Color></Color>
+<YellowSkinSnake><Color></Color>
