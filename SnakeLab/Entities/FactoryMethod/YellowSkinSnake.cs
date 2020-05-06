@@ -9,6 +9,7 @@ using System.Windows.Media;
 
 namespace SnakeLab.Entities
 {
+    [Serializable]
     class YellowSkinSnake : SimpleSnake, IAnimal
     {
         public YellowSkinSnake(int elementSize)

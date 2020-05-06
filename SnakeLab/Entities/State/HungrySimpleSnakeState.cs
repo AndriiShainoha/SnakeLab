@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnakeLab.Entities.SnakeModel
 {
+    [Serializable]
     class HungrySimpleSnakeState : ISimpleSnakeState
     {
         private MainWindow mainWindow;

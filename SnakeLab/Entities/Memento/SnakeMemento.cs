@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace SnakeLab.Entities.SnakeModel
 {
+    [Serializable]
     class SnakeMemento
     {
         public int Lives { get; set; }
