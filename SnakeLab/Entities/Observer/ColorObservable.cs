@@ -11,7 +11,6 @@ namespace SnakeLab.Entities.Observer
     class ColorObservable : IObservable
     {
         private Color _Color = Colors.Black;
-
         public Color Color
         {
             get

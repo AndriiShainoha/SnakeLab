@@ -14,10 +14,12 @@ namespace SnakeLab.Entities.Visitor
         {
             animals.Add(animal);
         }
+
         public void Remove(IAnimal animal)
         {
             animals.Remove(animal);
         }
+
         public void Accept(IVisitor visitor)
         {
             foreach(IAnimal animal in animals)

@@ -21,7 +21,6 @@ namespace SnakeLab.Entities
 
         public BlueSkinSnake()
         {
-
         }
 
         public override string GetColor()
@@ -29,6 +28,7 @@ namespace SnakeLab.Entities
             string str = "Blue snake has blue color";
             return str;
         }
+
         public override string GetCharacteristicsOfKind()
         {
             string str = "Blue snakes are popular in Africa.";
@@ -39,7 +39,6 @@ namespace SnakeLab.Entities
         {
             visitor.VisitBlueSnake(this);
         }
-
         public void ColorChanged(Color newColor)
         {
         }

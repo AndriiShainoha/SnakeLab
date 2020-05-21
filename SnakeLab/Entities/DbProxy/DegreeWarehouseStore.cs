@@ -13,6 +13,7 @@ namespace SnakeLab.Entities.Db
         {
             db = new DegreeContext();
         }
+
         public Degree GetDegree(int number)
         {
             return db.Degrees.FirstOrDefault(p => p.Id == number);

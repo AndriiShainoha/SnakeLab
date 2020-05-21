@@ -73,7 +73,7 @@ namespace SnakeLab
             MessageBox.Show($"You have reached level {level}. Your score is {score}. You ate {apples} apples! ", " Game Over!");
         }
 
-        private void RestartClick(object sender, RoutedEventArgs e)  //отут є difficulty slider zrbq складність гри
+        private void RestartClick(object sender, RoutedEventArgs e)
         {
             CheckDemoCheckBox();
             _gameWorld.StopGame();

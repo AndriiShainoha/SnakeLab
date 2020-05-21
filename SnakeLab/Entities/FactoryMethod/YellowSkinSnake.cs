@@ -21,7 +21,6 @@ namespace SnakeLab.Entities
 
         public YellowSkinSnake()
         {
-
         }
 
         public override string GetColor()
@@ -29,6 +28,7 @@ namespace SnakeLab.Entities
             string str = "Yellow snake has yellow color";
             return str;
         }
+
         public override string GetCharacteristicsOfKind()
         {
             string str = "Yellow snakes are popular in Australia.";

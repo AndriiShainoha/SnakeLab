@@ -14,6 +14,7 @@ namespace SnakeLab.Entities.Db
         {
             degrees = new List<Degree>();
         }
+
         public Degree GetDegree(int number)
         {
             Degree degree = degrees.FirstOrDefault(p => p.Id == number);

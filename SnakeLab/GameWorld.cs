@@ -122,7 +122,6 @@ namespace SnakeLab
             Draw();
         }
 
-        //SimpleSnake.Eat();   десь ще дописати
         private void MainGameOnlyLoop(object sender, EventArgs e)
         {
             SimpleSnake.MoveSnake();
@@ -155,6 +154,7 @@ namespace SnakeLab
             mainWindow.GameWorld.Children.Add(GenerateVerticalWorldLine(j));
             mainWindow.GameWorld.Children.Add(GenerateHorizontalWorldLine(i));
         }
+
         private void DrawSnake()
         {
             foreach (var snakeElement in SimpleSnake.Elements)

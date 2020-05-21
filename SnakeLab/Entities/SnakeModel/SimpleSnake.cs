@@ -128,7 +128,6 @@ namespace SnakeLab.Entities
             if(SnakeLives < 10 )
             {
                 SnakeLives++;
-                //mainWindow.PowerLbl.Content = $"Power:{SnakeLives}";
             }
             else
             {
@@ -141,10 +140,9 @@ namespace SnakeLab.Entities
             return new SnakeMemento(SnakeLives);
         }
 
-        public void RestoreState(SnakeMemento snakeMemento)   //мож і не треба
+        public void RestoreState(SnakeMemento snakeMemento)  
         {
             //this.SnakeLives = snakeMemento.Lives;
-            //вивести якийсь текст тіпа востановление игри
         }
 
         public void GetInfo()

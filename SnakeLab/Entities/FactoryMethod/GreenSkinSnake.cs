@@ -18,6 +18,7 @@ namespace SnakeLab.Entities
             Elements = new List<SnakeElement>();
             _elementSize = elementSize;
         }
+
         public GreenSkinSnake()
         {
 
@@ -28,11 +29,13 @@ namespace SnakeLab.Entities
             string str = "Green snake has green color";
             return str;
         }
+
         public override string GetCharacteristicsOfKind()
         {
             string str = "Green snakes are popular in USA.";
             return str;
         }
+
         public void Accept(IVisitor visitor)
         {
             visitor.VisitGreenSnake(this);

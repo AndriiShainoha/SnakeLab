@@ -32,7 +32,6 @@ namespace SnakeLab.Entities.Food
             else
                 return false;
         }
-
         public override int GetHashCode() => GetHashCode();
         public override string ToString() => ToString();
     }
