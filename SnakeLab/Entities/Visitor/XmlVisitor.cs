@@ -13,28 +13,16 @@ namespace SnakeLab.Entities.SnakeModel
         public void VisitBlueSnake(BlueSkinSnake blueSkinSnake)
         {
             string result = "<BlueSkinSnake><Color>" + blueSkinSnake.Color + "</Color>";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine(result);
-            }
         }
 
         public void VisitGreenSnake(GreenSkinSnake greenSkinSnake)
         {
             string result = "<GreenSkinSnake><Color>" + greenSkinSnake.Color + "</Color>";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine(result);
-            }
         }
 
         public void VisitYellowSnake(YellowSkinSnake yellowSkinSnake)
         {
             string result = "<YellowSkinSnake><Color>" + yellowSkinSnake.Color + "</Color>";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine(result);
-            }
         }
     }
 }

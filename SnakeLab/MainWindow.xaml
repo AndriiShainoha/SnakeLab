@@ -39,7 +39,6 @@
             <Label Style="{StaticResource MaterialDesignLabel}" x:Name="LevelLbl" FontSize="19" Grid.Row="5" HorizontalAlignment="Left">Level: 1</Label>
             <Label Style="{StaticResource MaterialDesignLabel}" x:Name="ScoreLbl" FontSize="19" Grid.Row="6" HorizontalAlignment="Left">Score: 1</Label>
             <Label Style="{StaticResource MaterialDesignLabel}" x:Name="AppetiteLbl" FontSize="19" Grid.Row="7" HorizontalAlignment="Left">Appetite</Label>
-            <Label Style="{StaticResource MaterialDesignLabel}" x:Name="PowerLbl" FontSize="19" Grid.Row="8" HorizontalAlignment="Left" Margin="1,29.6,0,-29">Power:</Label>
         </Grid>
         <GridSplitter Grid.Column="3" Width="7" Style="{StaticResource MaterialDesignGridSplitter}" Grid.ColumnSpan="3" Margin="0,0,109.2,0" ></GridSplitter>
         <md:DialogHost Grid.Column="0" x:Name="DialogHost" Grid.ColumnSpan="6" Margin="0,0,110.2,0">

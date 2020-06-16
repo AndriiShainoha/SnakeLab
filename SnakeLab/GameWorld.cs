@@ -107,11 +107,6 @@ namespace SnakeLab
         public void SerializeInJson(SimpleSnake simpleSnake)
         {
             string path = @"D:\SnakeLab3\SnakeLab\serializer.json";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                string json = JsonConvert.SerializeObject(simpleSnake);
-                sw.WriteLine(json);
-            }
         }
 
         private void MainGameLoop(object sender, EventArgs e)

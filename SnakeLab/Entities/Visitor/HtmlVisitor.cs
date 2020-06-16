@@ -15,30 +15,18 @@ namespace SnakeLab.Entities.SnakeModel
         {
             string result = "<table><tr><td>Властивість<td><td>Значення</td></tr>";
             result += "<tr><td>Color<td><td>" + blueSkinSnake.Color + "</td></tr>";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine(result);
-            }
         }
 
         public void VisitGreenSnake(GreenSkinSnake greenSkinSnake)
         {
             string result = "<table><tr><td>Властивість<td><td>Значення</td></tr>";
             result += "<tr><td>Color<td><td>" + greenSkinSnake.Color + "</td></tr>";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine(result);
-            }
         }
 
         public void VisitYellowSnake(YellowSkinSnake yellowSkinSnake)
         {
             string result = "<table><tr><td>Властивість<td><td>Значення</td></tr>";
             result += "<tr><td>Color<td><td>" + yellowSkinSnake.Color + "</td></tr>";
-            using (StreamWriter sw = File.AppendText(path))
-            {
-                sw.WriteLine(result);
-            }
         }
     }
 }
